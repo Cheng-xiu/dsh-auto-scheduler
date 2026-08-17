@@ -8,21 +8,21 @@ if errorlevel 1 (
   exit /b 1
 )
 echo [1/2] Installing dsh-auto-scheduler into profile "%PROFILE%" ...
-call dsh plugin --profile "%PROFILE%" add github:Cheng-xiu/dsh-auto-scheduler#v0.1.2
+call dsh plugin --profile "%PROFILE%" add github:Cheng-xiu/dsh-auto-scheduler#v0.1.3
 if errorlevel 1 (
   echo.
-  echo [ERROR] Install failed. If pnpm printed a store/allowBuilds message,
-  echo         follow its hint and re-run this script.
+  echo [ERROR] Install failed. Follow the pnpm hint printed above and re-run.
   exit /b 1
 )
 echo [2/2] Verifying bundle entry ...
-findstr /c:"dsh-auto-scheduler" "%USERPROFILE%\.dsh\profiles\%PROFILE%\package.json" >nul 2>nul
+set "PKGFILE=%USERPROFILE%\.dsh\profiles\%PROFILE%\package.json"
+findstr /c:dsh-auto-scheduler "%PKGFILE%" >nul 2>nul
 if errorlevel 1 (
-  echo [WARN] package.json check failed; run: type "%USERPROFILE%\.dsh\profiles\%PROFILE%\package.json"
+  echo [WARN] Could not verify package.json entry. Inspect the file manually.
 ) else (
   echo [OK] Installed.
   echo.
-  echo Next step: RESTART dsh web. The sidebar entry "Auto Work / Zi Dong Gong Zuo"
-  echo appears after restart (host scheduler and client panel are injected at boot).
+  echo Next step: RESTART dsh web. The sidebar entry appears after restart
+  echo (host scheduler and client panel are injected at boot).
 )
 endlocal

@@ -17,26 +17,28 @@ DeepSeek Harness（DSH）定时自动工作插件：在侧边栏填写工作目�
 
 ## 安装
 
-### 一键安装（Windows）
+### 手动安装（推荐）
+
+```sh
+dsh plugin --profile web add github:Cheng-xiu/dsh-auto-scheduler#v0.1.3
+```
+
+只需要这一条命令；`dsh plugin add` 会自动把插件注册进 bundle。
+
+### 一键安装脚本（Windows）
 
 下载安装脚本并运行（或克隆仓库后运行 `install.cmd`）：
 
 ```bat
-curl -o install.cmd https://raw.githubusercontent.com/Cheng-xiu/dsh-auto-scheduler/v0.1.2/install.cmd
+curl -o install.cmd https://raw.githubusercontent.com/Cheng-xiu/dsh-auto-scheduler/v0.1.3/install.cmd
 install.cmd            :: 可选：install.cmd <profile>，默认 profile 为 web
 ```
 
-### 一键安装（macOS / Linux）
+### 一键安装脚本（macOS / Linux）
 
 ```sh
-curl -o install.sh https://raw.githubusercontent.com/Cheng-xiu/dsh-auto-scheduler/v0.1.2/install.sh
+curl -o install.sh https://raw.githubusercontent.com/Cheng-xiu/dsh-auto-scheduler/v0.1.3/install.sh
 chmod +x install.sh && ./install.sh   # 可选：./install.sh <profile>
-```
-
-### 手动安装
-
-```sh
-dsh plugin --profile web add github:Cheng-xiu/dsh-auto-scheduler#v0.1.2
 ```
 
 然后**重启 dsh web**。重启后侧边栏出现「自动工作」入口。
