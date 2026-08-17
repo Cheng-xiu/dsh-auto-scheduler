@@ -8,5 +8,5 @@
 # sync), and the `dsh.client` declaration in package.json makes the browser
 # half (exports "./client", served at /plugins/<id>/client.js) load in the GUI.
 - insert:
-    - id: auto-scheduler
+    - id: dsh-auto-scheduler
       name: 'dsh-auto-scheduler'

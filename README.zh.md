@@ -1,3 +1,5 @@
+中文 | [English](README.md)
+
 # dsh-auto-scheduler
 
 DeepSeek Harness（DSH）定时自动工作插件：在侧边栏填写工作目标与工作时间，到点 DSH 自动新建会话并开始工作，到停止时间自动中断 agent 并停止会话（会话保留可回看）。
@@ -15,11 +17,29 @@ DeepSeek Harness（DSH）定时自动工作插件：在侧边栏填写工作目�
 
 ## 安装
 
-```sh
-dsh plugin --profile web add github:Cheng-xiu/dsh-auto-scheduler#v0.1.0
+### 一键安装（Windows）
+
+下载安装脚本并运行（或克隆仓库后运行 `install.cmd`）：
+
+```bat
+curl -o install.cmd https://raw.githubusercontent.com/Cheng-xiu/dsh-auto-scheduler/v0.1.1/install.cmd
+install.cmd            :: 可选：install.cmd <profile>，默认 profile 为 web
 ```
 
-然后**重启 dsh web**（客户端面板与 host 插件在启动时注入）。重启后侧边栏出现「自动工作」入口。
+### 一键安装（macOS / Linux）
+
+```sh
+curl -o install.sh https://raw.githubusercontent.com/Cheng-xiu/dsh-auto-scheduler/v0.1.1/install.sh
+chmod +x install.sh && ./install.sh   # 可选：./install.sh <profile>
+```
+
+### 手动安装
+
+```sh
+dsh plugin --profile web add github:Cheng-xiu/dsh-auto-scheduler#v0.1.1
+```
+
+然后**重启 dsh web**。重启后侧边栏出现「自动工作」入口。
 
 ## 使用
 
@@ -39,6 +59,12 @@ dsh plugin --profile web add github:Cheng-xiu/dsh-auto-scheduler#v0.1.0
 - 宿主进程每 20 秒检查一次调度；到期后走与 Web GUI 完全相同的会话路径（`apiProxy.sessions.create/prompt/cancel`）。
 - 静默模式使用插件自带的 agent preset `dsh-auto-scheduler-silent`（标准预设的复刻：静默 persona + 禁用提问工具），启动时同步到 `~/.dsh/.agent-presets/`。
 - 会话标题自动命名为「[自动] 目标前缀」，方便在会话列表中找到。
+
+## 常见问题
+
+- **重启后侧边栏没有入口**：执行 `dsh --profile web --dump-config | findstr auto-scheduler`；若没有该行说明安装未生效，重新执行安装命令。客户端面板在启动时注入，安装/升级后必须重启。
+- **pnpm store / allowBuilds 报错**：本插件零依赖、无构建脚本；按 `dsh plugin add` 打印的 pnpm 提示操作（例如把打印的 key 加进 profile 的 `pnpm-workspace.yaml` 的 `allowBuilds`）后重试。
+- **任务没触发**：到点时 dsh web 进程必须正在运行；错过的窗口按设计直接跳过。
 
 ## 许可证
 
