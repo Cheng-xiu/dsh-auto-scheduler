@@ -20,7 +20,7 @@ A DeepSeek Harness (DSH) plugin for timed autonomous work: fill in a goal and a 
 ### Manual (recommended)
 
 ```sh
-dsh plugin --profile web add github:Cheng-xiu/dsh-auto-scheduler#v0.1.3
+dsh plugin --profile web add github:Cheng-xiu/dsh-auto-scheduler#v0.1.4
 ```
 
 This is the only command needed; `dsh plugin add` registers the plugin bundle automatically.
@@ -30,14 +30,14 @@ This is the only command needed; `dsh plugin add` registers the plugin bundle au
 Download the installer and run it (or clone the repo and run `install.cmd`):
 
 ```bat
-curl -o install.cmd https://raw.githubusercontent.com/Cheng-xiu/dsh-auto-scheduler/v0.1.3/install.cmd
+curl -o install.cmd https://raw.githubusercontent.com/Cheng-xiu/dsh-auto-scheduler/v0.1.4/install.cmd
 install.cmd            :: optional: install.cmd <profile>, default profile is web
 ```
 
 ### One-click script (macOS / Linux)
 
 ```sh
-curl -o install.sh https://raw.githubusercontent.com/Cheng-xiu/dsh-auto-scheduler/v0.1.3/install.sh
+curl -o install.sh https://raw.githubusercontent.com/Cheng-xiu/dsh-auto-scheduler/v0.1.4/install.sh
 chmod +x install.sh && ./install.sh   # optional: ./install.sh <profile>
 ```
 

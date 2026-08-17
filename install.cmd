@@ -8,7 +8,7 @@ if errorlevel 1 (
   exit /b 1
 )
 echo [1/2] Installing dsh-auto-scheduler into profile "%PROFILE%" ...
-call dsh plugin --profile "%PROFILE%" add github:Cheng-xiu/dsh-auto-scheduler#v0.1.3
+call dsh plugin --profile "%PROFILE%" add github:Cheng-xiu/dsh-auto-scheduler#v0.1.4
 if errorlevel 1 (
   echo.
   echo [ERROR] Install failed. Follow the pnpm hint printed above and re-run.
