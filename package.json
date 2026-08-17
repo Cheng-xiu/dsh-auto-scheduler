@@ -1,0 +1,45 @@
+{
+  "name": "dsh-auto-scheduler",
+  "version": "0.1.0",
+  "description": "DSH timed auto-work plugin: start/stop agent sessions on a user-defined schedule with valley/peak presets and silent mode (DeepSeek Harness dsh-plugin)",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "presets",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ]
+    }
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "dsh",
+    "scheduler",
+    "automation",
+    "cron"
+  ],
+  "author": "Cheng-xiu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cheng-xiu/dsh-auto-scheduler"
+  }
+}

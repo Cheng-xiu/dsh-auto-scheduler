@@ -1,0 +1,3 @@
+name: 静默自动工作
+description: 定时无人值守模式：不向用户提问、danger-full-access 权限，持续工作直到任务完成或被定时停止。
+order: 90
