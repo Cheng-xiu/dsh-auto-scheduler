@@ -22,21 +22,21 @@ A DeepSeek Harness (DSH) plugin for timed autonomous work: fill in a goal and a 
 Download and run the installer (or clone the repo and run `install.cmd`):
 
 ```bat
-curl -o install.cmd https://raw.githubusercontent.com/Cheng-xiu/dsh-auto-scheduler/v0.1.1/install.cmd
+curl -o install.cmd https://raw.githubusercontent.com/Cheng-xiu/dsh-auto-scheduler/v0.1.2/install.cmd
 install.cmd            :: optional: install.cmd <profile>, default profile is web
 ```
 
 ### One-click (macOS / Linux)
 
 ```sh
-curl -o install.sh https://raw.githubusercontent.com/Cheng-xiu/dsh-auto-scheduler/v0.1.1/install.sh
+curl -o install.sh https://raw.githubusercontent.com/Cheng-xiu/dsh-auto-scheduler/v0.1.2/install.sh
 chmod +x install.sh && ./install.sh   # optional: ./install.sh <profile>
 ```
 
 ### Manual
 
 ```sh
-dsh plugin --profile web add github:Cheng-xiu/dsh-auto-scheduler#v0.1.1
+dsh plugin --profile web add github:Cheng-xiu/dsh-auto-scheduler#v0.1.2
 ```
 
 Restart `dsh web` afterwards. The "Auto Work" (自动工作) entry then appears in the sidebar.

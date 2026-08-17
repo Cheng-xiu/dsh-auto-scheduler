@@ -1,6 +1,6 @@
 {
   "name": "dsh-auto-scheduler",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "DSH timed auto-work plugin: start/stop agent sessions on a user-defined schedule with valley/peak presets and silent mode (DeepSeek Harness dsh-plugin)",
   "license": "MIT",
   "main": "lib/index.js",
